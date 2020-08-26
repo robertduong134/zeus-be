@@ -11,7 +11,7 @@ public class JwtService {
 
     public JwtTokenData generateToken(String username){
         String jwtAccessToken = jwtProvider.generateAccessTokenRSA(username);
-        String jwtRefreshToken = jwtProvider.generateRefreshToken(jwtAccessToken);
+        String jwtRefreshToken = jwtProvider.generateRefreshToken(username);
         return JwtTokenData.builder().jwtAccessToken(jwtAccessToken).jwtRefreshToken(jwtRefreshToken).build();
     }
 

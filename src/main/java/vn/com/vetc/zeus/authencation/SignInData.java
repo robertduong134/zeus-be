@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SignInData {
 
-    private String jwtAccessToken;
-    private String jwtRefreshToken;
+    private String accessToken;
+    private String refreshToken;
 
 }

@@ -43,8 +43,8 @@ public class AuthenticationService {
         JwtTokenData jwtTokenData = jwtService.generateToken(username);
 
         return SignInData.builder()
-                .jwtAccessToken(jwtTokenData.getJwtAccessToken())
-                .jwtRefreshToken(jwtTokenData.getJwtRefreshToken())
+                .accessToken(jwtTokenData.getJwtAccessToken())
+                .refreshToken(jwtTokenData.getJwtRefreshToken())
                 .build();
     }
 

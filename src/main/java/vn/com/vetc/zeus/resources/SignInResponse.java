@@ -12,13 +12,13 @@ import vn.com.vetc.zeus.authencation.SignInData;
 @Builder
 public class SignInResponse {
 
-    private String jwtAccessToken;
-    private String jwtRefreshToken;
+    private String accessToken;
+    private String refreshToken;
 
     public static SignInResponse from(SignInData signInData){
         return SignInResponse.builder()
-                .jwtAccessToken(signInData.getJwtAccessToken())
-                .jwtRefreshToken(signInData.getJwtRefreshToken())
+                .accessToken(signInData.getAccessToken())
+                .refreshToken(signInData.getRefreshToken())
                 .build();
     }
 }

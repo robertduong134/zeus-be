@@ -107,9 +107,9 @@ public class JwtProvider {
         return encodedJWT;
     }
 
-    public String generateRefreshToken(String token) {
+    public String generateRefreshToken(String username) {
         return Jwts.builder()
-                .setSubject(getUserNameFromTokenRSA(token))
+                .setSubject(username)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtRefreshExpiration * 1000))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
