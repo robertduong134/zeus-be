@@ -1,4 +1,4 @@
-package vn.com.vetc.zeus.resources;
+package vn.com.vetc.zeus.authencation.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
