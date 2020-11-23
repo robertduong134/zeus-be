@@ -24,7 +24,7 @@ public class AuthenticationService {
     @Autowired
     JwtService jwtService;
 
-    public SignInData signIn(String username, String password){
+    public AuthenticationData login(String username, String password){
         log.debug("Request sign in from user: {}", username);
         Authentication authentication = null;
         try {
@@ -42,7 +42,7 @@ public class AuthenticationService {
 
         JwtTokenData jwtTokenData = jwtService.generateToken(username);
 
-        return SignInData.builder()
+        return AuthenticationData.builder()
                 .accessToken(jwtTokenData.getJwtAccessToken())
                 .refreshToken(jwtTokenData.getJwtRefreshToken())
                 .build();

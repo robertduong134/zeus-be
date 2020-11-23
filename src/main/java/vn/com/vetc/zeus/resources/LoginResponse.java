@@ -4,21 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import vn.com.vetc.zeus.authencation.SignInData;
+import vn.com.vetc.zeus.authencation.AuthenticationData;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SignInResponse {
+public class LoginResponse {
 
     private String accessToken;
     private String refreshToken;
 
-    public static SignInResponse from(SignInData signInData){
-        return SignInResponse.builder()
-                .accessToken(signInData.getAccessToken())
-                .refreshToken(signInData.getRefreshToken())
+    public static LoginResponse from(AuthenticationData authenticationData){
+        return LoginResponse.builder()
+                .accessToken(authenticationData.getAccessToken())
+                .refreshToken(authenticationData.getRefreshToken())
                 .build();
     }
 }
